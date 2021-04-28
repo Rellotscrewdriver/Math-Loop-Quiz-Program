@@ -1,0 +1,20 @@
+
+	Math Loop Quiz Program
+	
+	case 1:
+	2x1=?
+	options 1 or 2
+	if choose 2, right else choose 1, wrong.
+	
+	case 2:
+	5x2=?
+	options 10 or 8
+	if choose 10, correct else choose 8, wrong.
+
+	case 3:
+	5+2=?
+	options 10 or 7
+	if choose 10, wrong else choose 7, correct.
+
+	Number of correct answers= no. out of 3
+	Number of incorrect answers= no. out of 3
