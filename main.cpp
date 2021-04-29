@@ -1,69 +1,45 @@
 #include <iostream>
-//include <cstdlib>
+#include <cstdlib>
+#include <ctime>
 using namespace std;
 
 int main(){
-	//srand(time_t(3));
-	int number_Of_Questions = 3;
+
+	srand(time(0));
+	int number_Of_Questions;
 	int your_attempt;
-	int correct_answer;
-	int wrong_answer_count = NULL;
-	int right_answer_count = NULL;
+	int wrong_answer_count = 0;
+	int right_answer_count = 0;
 
 	cout << "How many questions?" << "\nAnswer: ";
-	//this input is useless for now
 	cin >> number_Of_Questions;
 	cout << endl;
 
+	/* You can probably see where I'm going, currently it can only do addition.*/
+	for(int a = 1; a <= number_Of_Questions; a++){
 
- /* even though this project is supposed to be done in loop
-	but for now I just copycat it for now. later it will be
-	dynamic, you can call it some sort of a prototype */
+    int random_number1 = rand() % 10;
+    int random_number2 = rand() % 10;
+    int correct_answer = random_number1 + random_number2;
+    //char rand_operators[] = {'-', '/', '*', '+'};
 
-	//case 1
-	cout << 2 << " X " << 1 << " = ";
+	cout << "Question: " << a << endl;
+	cout << random_number1 << " + " << random_number2 << " = " << " ?\n";
+	cout << "Options: " << rand() % 10 << " or " << correct_answer << "\nYour Answer: " << endl;
 	cin >> your_attempt;
-	cout << "Options 2 or 1" << endl;
-	if(your_attempt == (correct_answer = 2*1)){
+
+	if(your_attempt == (correct_answer)){
 		cout << "Congradulations, that is correct" << endl;
 		right_answer_count += 1;
 	} else {
 		cout << "You are wrong, the answer was " << correct_answer << endl;
 		wrong_answer_count += 1;
 	}
-
-	//for some reason the if and else statement aren't returning the newline
-	cout << endl;
-
-	//case 2
-	cout << 5 << " X " << 2 << " = ";
-	cin >> your_attempt;
-	cout << "Options 10 or 7" << endl;
-	if(your_attempt == (correct_answer = 5*2)){
-		cout << "Congradulations, that is correct" << endl;
-		right_answer_count += 1;
-	} else {
-		cout << "You are wrong, the answer was " << correct_answer << endl;
-		wrong_answer_count += 1;
-	}
-
-	//for some reason the if and else statement aren't returning the newline
-	cout << endl;
-
-	//case 3
-	cout << 5 << " + " << 2 << " = ";
-	cin >> your_attempt;
-	cout << "Options 3 or 7" << endl;
-	if(your_attempt == (correct_answer = 5+2)){
-		cout << "Congradulations, that is correct" << endl;
-		right_answer_count += 1;
-	} else {
-		cout << "You are wrong, the answer was " << correct_answer << endl;
-		wrong_answer_count += 1;
+        cout << endl;
 	}
 
 	cout << "\n\nNumber of Correct answers: " << right_answer_count << endl;
 	cout << "Number of Wrong answers: " << wrong_answer_count << endl;
 
-	system("pause");
+    return 0;
 }
