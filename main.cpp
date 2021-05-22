@@ -5,7 +5,7 @@ using namespace std;
 
 //asks the for loop of main function to print out number of questions to be attempted
 int number_Of_Questions;
-float correct_answer;
+int correct_answer;
 int your_attempt;
 //Counts How many answers were either correct/wrong in the for loop in main function
 int wrong_answer_count = 0;
@@ -25,7 +25,7 @@ int option[1]; //it can only choose between two, but in the future, I will add i
 /*If the option variable matches the correct answer, it will generate a new variable.
   The chances of this occuring is pretty low, but still it should do the trick. */
 int new_random;
-//this
+
 int place_option;
 
 
@@ -46,18 +46,18 @@ int main(){
 	cin >> number_Of_Questions;
 	cout << endl;
 
-	/* the correct answers are now dynamic. but the options are only 2.
-       In the future, I will add upto 4 and probably work on input function
-       not to excute when a string is entered
+	/* edit: I rather scrap that last idea and call it done. I would focus more on
+        refactoring, cleaning and tiding code and probably fix some bugs
 	*/
 	for(int a = 1; a <= number_Of_Questions; a++){
 
-    random_number1 = rand() % 10;
-    random_number2 = rand() % 10;
-    new_random = rand() % 20;
-    option[0] = rand() % 20;
-    option[1] = rand() % 20;
+    random_number1 = 2 + (rand() % 10);
+    random_number2 = 2 + (rand() % 10);
+    new_random = 2.0 + (rand() % 20);
+    option[0] = 2 + (rand() % 20);
+    option[1] = 2 + (rand() % 20);
     place_option = rand() % 2;
+
 
     cout << "Question: " << a << endl;
     if(operators[rand() % 4] == operators[0])
@@ -75,6 +75,7 @@ int main(){
 	cout << "\n\nNumber of Correct answers: " << right_answer_count << endl;
 	cout << "Number of Wrong answers: " << wrong_answer_count << endl;
 
+	system("pause");
     return 0;
 }
 
@@ -90,12 +91,29 @@ void option_choose(){
 void options(){
 	if(option[0] == option[1])
         option_choose();
-	else if(option[0] == correct_answer || option[1] == correct_answer)
+	else if(option[0] == correct_answer && option[1] == correct_answer)
         option_choose();
     else
         option_choose();
 }
 
+void fdgd(){
+//try{
+	if(your_attempt == (correct_answer)){
+		cout << "Congradulations, that is correct" << endl;
+		right_answer_count += 1;
+	} else if(your_attempt == new_random || your_attempt != your_attempt){
+		cout << "You are wrong, the answer was " << correct_answer << endl;
+		wrong_answer_count += 1;
+	} else {
+       // throw "Invaild Number: ";
+	}
+//}
+	//catch(const char* l){
+     //   cout << "you attempted to write a text or a letter instead of integer" << endl;
+    //    std::terminate();
+	//}
+}
 //these functions generate random question and handle the answers
 //I had to create four fricking functions for the program to ask four different questions!
 
@@ -105,13 +123,7 @@ void GRQATAFA(){
     options();
 	cin >> your_attempt;
 
-	if(your_attempt == (correct_answer)){
-		cout << "Congradulations, that is correct" << endl;
-		right_answer_count += 1;
-	} else {
-		cout << "You are wrong, the answer was " << correct_answer << endl;
-		wrong_answer_count += 1;
-	}
+    fdgd();
 }
 
 void GRQATAFS(){
