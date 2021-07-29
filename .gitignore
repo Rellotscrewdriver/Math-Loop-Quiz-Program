@@ -1,0 +1,14 @@
+# Code::Blocks project files
+*.cbp
+*.depend
+*.layout
+*.cscope_file_list
+
+#Complied Object Files
+*.o
+
+# Executables
+*.exe
+
+#Plain Text File
+*.txt
