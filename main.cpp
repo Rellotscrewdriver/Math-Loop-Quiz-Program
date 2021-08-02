@@ -18,12 +18,12 @@ struct variables {
 	int number_Of_Questions;
 
 	//these two data types were changed in order to be able
-	double correct_answer;
-	double your_attempt;
+	float correct_answer;
+	float your_attempt;
 
 	//these two stores the random numbers generated and perform the operations in different functions
-	double random_number1;
-	double random_number2;
+	float random_number1;
+	float random_number2;
 
 	//this is an initial operator
 	int choose_option[1];
@@ -82,7 +82,7 @@ public:
 		if (var.choose_option[0] == var.choose_option[1]) {
 			//cout << "if conditon located at show_options() is executed" << endl;
 			choose_new_option();
-		} else if (var.choose_option[0] == var.correct_answer && var.choose_option[1] == var.correct_answer) {
+		} else if (var.choose_option[0] == var.correct_answer || var.choose_option[1] == var.correct_answer) {
 			//cout << "else if or second conditon located at show_options() is executed" << endl;
 			choose_new_option();
 		} else {
@@ -160,9 +160,10 @@ public:
 		return var.correct_answer;
 	}
 
-	void Division(int random_number1, int random_number2) {
+	float Division(float random_number1, float random_number2) {
 		var.correct_answer = random_number1 / random_number2;
 		question_format(" / ");
+        return var.correct_answer;
 	}
 
 	//chooses the question randomly with random_numbers parameters
@@ -186,7 +187,7 @@ private:
 	void random_numbers() {
 		var.random_number1 = 2 + rand() % 10;
 		var.random_number2 = 2 + rand() % 10;
-		var.new_random_number = -69 + rand() % 1; //noice
+		var.new_random_number = -69 + rand() % (-69 - 1 + 1); //noice
 		var.choose_option[0] = 2.0 + fmod(rand(), 10.0);
 		var.choose_option[1] = 2.0 + fmod(rand(), 10.0);
 		var.option_order = rand() % 2;
