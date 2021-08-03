@@ -26,7 +26,7 @@ struct variables {
 	float random_number2;
 
 	//this is an initial operator
-	int choose_option[1];
+	int choose_option[2];
 
 	/*If a different option matches the correct answer or two options are equal,
 	  it will generate a new number which is unique and
@@ -106,7 +106,7 @@ private:
 public:
 	//to solve the given question
 	void check_answer() {
-		if (var.your_attempt == var.correct_answer) {
+		if (round(var.your_attempt) == round(var.correct_answer)) {
 			right_answer_count++; //counts the right answer to 1
 			cout << "Congratulations, that is correct";
 		} else {
@@ -138,6 +138,14 @@ private:
 		cin >> var.your_attempt;
 		solve.check_answer(); //shows the answer
 	}
+
+    /*
+    float re_div(float a, float b){
+        if(a < b){
+
+        }
+    }
+    */
 
 public:
 
