@@ -5,7 +5,6 @@
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
-#include <string>
 #include <cmath>
 #include <limits>
 
@@ -13,7 +12,7 @@ using namespace std;
 
 class Display {
 private:
-    void horizontal_rule(string symbol);
+    void horizontal_rule(char symbol);
 public:
     int number_Of_Questions;
     //greets the user :)
