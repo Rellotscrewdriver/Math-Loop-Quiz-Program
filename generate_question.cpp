@@ -5,7 +5,8 @@ void Generate_Question::choose_question() {
     random_number = 2 + rand() % 10;
     random_number2 = 2 + rand() % 10;
 
-    cout << "at choose_question(): " << random_number << " : " << random_number2 << endl;
+    //cout << "at choose_question(): " << random_number << " : " << random_number2 << endl;
+
     if (operators[rand() % 4] == operators[0]) {
         Addition(random_number, random_number2);
     } else if (operators[rand() % 4] == operators[1]) {

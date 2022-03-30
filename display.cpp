@@ -42,7 +42,7 @@ Display_2::Display_2(){
         solve.final_score();
 
     } else {
-        cout << "Maximum Questions reached! The Limit is 25 or You put an invaild number" << endl;
+        cout << "Maximum Questions reached! The Limit is 25 or You put an invalid number" << endl;
         cin.clear();
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
     }

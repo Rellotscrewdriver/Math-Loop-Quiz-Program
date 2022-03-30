@@ -55,7 +55,7 @@ private:
 	void stop_buffer_overflow();
 
 public:
-	//to check wether the answer was correct or not
+	//to check whether the answer was correct or not
 	void check_answer(float your_attempt, float correct_answer);
 	void final_score();
 };
