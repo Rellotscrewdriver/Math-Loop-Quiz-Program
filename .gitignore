@@ -1,14 +1,15 @@
-# Code::Blocks project files
-*.cbp
-*.depend
-*.layout
-*.cscope_file_list
-
-#Complied Object Files
-*.o
+# VS code
+*.json
 
 # Executables
 *.exe
 
 #Plain Text File
 *.txt
+
+#code blocks object and binary path
+bin/
+obj/
+
+#C++ object files
+*.o
