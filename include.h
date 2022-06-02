@@ -35,7 +35,7 @@ private:
 	  to give you a feeling that you're really taking an MCQ test
 	*/
 	void choose_option(double answer);
-
+	void generate_unique_number(double option1, double option2, double answer);
 	//it chooses the new option if the answer is same as the other option
 	void choose_new_option(double answer);
 

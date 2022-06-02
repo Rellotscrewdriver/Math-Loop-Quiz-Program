@@ -1,20 +1,43 @@
 #include "include.h"
 
 void Option::show_options(double right_answer) {
-    new_random_number = -69 + rand() % (-69 - 1 + 1); //noice
     option_choose[0] = 2.0 + fmod(rand(), 10.0);
     option_choose[1] = 2.0 + fmod(rand(), 10.0);
     option_order = rand() % 2;
-
+    
     if (option_choose[0] == option_choose[1]) {
         //cout << "first condition at show_options() is executed" << endl;
+        generate_unique_number(option_choose[0], option_choose[1], right_answer);
+        //cout << "final random number: " << new_random_number << "\n";
+        //cout << "comparing numbers to: Option1: " << option_choose[0] << " : Option2: " << option_choose[1] << "\n Answer: " << right_answer << endl;
         choose_new_option(right_answer);
     } else if (option_choose[0] == right_answer || option_choose[1] == right_answer) {
         //cout << "second condition at show_options() is executed" << endl;
+        generate_unique_number(option_choose[0], option_choose[1], right_answer);
+        //cout << "final random number: " << new_random_number << "\n";
+        //cout << "comparing numbers to: Option1: " << option_choose[0] << " : Option2: " << option_choose[1] << "\n Answer: " << right_answer << endl;
         choose_new_option(right_answer);
     } else {
-       //cout << "third condition at show_options() is executed" << endl;
+        //cout << "third condition at show_options() is executed" << endl;
         choose_option(right_answer);
+    }
+}
+
+void Option::generate_unique_number(double option1, double option2, double answer){
+    while(true) {
+        new_random_number = 2.0 + fmod(rand(), 10.0);
+        /*cout << "intial random number: " << new_random_number << "\n";
+        cout << "comparing inital numbers to: Option1: " << option1 
+        << " : Option2: " << option2 
+        << "\n Answer: " << answer << endl;*/
+    
+        if(option1 == new_random_number || option2 == new_random_number) {
+            new_random_number = 2.0 + fmod(rand(), 10.0);
+        } else if(answer == new_random_number) {
+            new_random_number = 2.0 + fmod(rand(), 10.0);
+        } else {
+            break;
+        }
     }
 }
 
