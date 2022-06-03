@@ -13,3 +13,7 @@ obj/
 
 #C++ object files
 *.o
+
+#AStyle original formatted files
+*.cpp.orig
+*.h.orig

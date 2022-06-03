@@ -1,0 +1,8 @@
+--style=java
+--indent=tab=2
+--indent-classes
+--break-blocks
+--delete-empty-lines
+--add-braces
+--remove-comment-prefix
+--break-after-logical

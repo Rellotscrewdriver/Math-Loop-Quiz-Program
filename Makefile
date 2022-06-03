@@ -12,7 +12,7 @@ run:
 	Math-Loop-Quiz-Program
 
 clean:
-	rm -f *.o *.exe
+	rm -f *.o *.exe *.cpp.orig *.h.orig
 
 generate_question.o: generate_question.cpp
 	g++ generate_question.cpp -c
